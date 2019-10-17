@@ -1,1 +1,0 @@
-// export const LOADER_INCREASE = 'LOADER_INCREASE'

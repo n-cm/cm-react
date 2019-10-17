@@ -1,24 +1,12 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
-import store, { history } from './store'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import './index.css';
-import Route from './route';
-import registerServiceWorker from './registerServiceWorker';
+import { Text } from './lib'
 
-class Main extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <Route />
-        </ConnectedRouter>
-      </Provider>
-    )
-  }
-}
+const Main = () => 
+  <div>
+    This is my first attempt
+    <Text></Text>
+  </div>
 
 ReactDOM.render(<Main />, document.getElementById('root'));
-registerServiceWorker();
