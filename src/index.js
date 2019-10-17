@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Text } from './lib'
+import { ThemeProvider, Text } from './lib'
 
 const Main = () => 
-  <div>
-    This is my first attempt
-    <Text></Text>
-  </div>
+  <ThemeProvider>
+    <Text error>123</Text>
+  </ThemeProvider>
 
 ReactDOM.render(<Main />, document.getElementById('root'));
