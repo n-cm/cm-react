@@ -33,8 +33,13 @@ export const generalCss = css`
   ${p => css`
     ${p.width && `width: ${p.width};`}
     ${p.height && `height: ${p.height};`}
-    ${p.borderRadius && `border-radius: ${p.borderRadius}`}
-    ${p.opacity && `opacity: ${p.opacity}`}
+    ${p.maxWidth && css`max-width: ${p.maxWidth};`}
+    ${p.maxHeight && css`max-height: ${p.maxHeight};`} 
+    ${p.fitWidth && css`min-width: fit-content;`}
+    ${p.fitHeight && css`min-height: fit-content;`}
+    ${p.borderRadius && `border-radius: ${p.borderRadius};`}
+    ${p.opacity && `opacity: ${p.opacity};`}
+    ${p.zIndex && css`z-index: ${p.zIndex};`}
     ${positionCss}
     ${colorCss}
     ${cursorCss}
@@ -50,6 +55,8 @@ export const positionCss = css`
     ${p.absBottom && `bottom: ${p.absBottom};`}
     ${p.absLeft && `left: ${p.absLeft};`}
     ${p.absRight && `right: ${p.absRight};`}
+    ${p => p.overflowHidden && css`overflow: hidden;`}
+    ${p => p.overflowAuto && css`overflow: auto;`}  
   `}
 `
 

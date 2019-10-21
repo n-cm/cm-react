@@ -35,3 +35,21 @@ const Example = () =>
     <Text primary>Hello World</Text>
   </ThemeProvider>
 ```
+
+## General
+Many common components include the below props:
+- width, height, maxWidth, maxHeight, fitWidth, fitHeight
+- borderRadius, opacity, zIndex
+- relative, absolute, absTop, absBottom, absLeft, absRight, overflowHidden, overflowAuto
+- primary, secondary, white, black, error, disabled, color<any color code>
+- bgPrimary, bgSecondary, bgWhite, bgBlack, bgColor<any color code>
+- noSelect, onClick, disabled
+
+## Text
+Props includes 
+- XS, S, M, L, XL
+- bold, underline, underlineColor
+- center, right, left
+- nowrap, inline
+
+## 
