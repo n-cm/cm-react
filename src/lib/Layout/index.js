@@ -1,11 +1,11 @@
 // import React from 'react'
 import styled, { css } from 'styled-components'
-import { generalCss } from '../Theme'
+import { responsiveCss, generalCss } from '../Theme'
 const Flex = styled.div`
   display: flex;
   ${p => p.flexWrap && css`flex-wrap: wrap`}
   box-sizing: border-box;
-  ${p => p.flex && css`flex: ${p.flex};`}
+  ${p => responsiveCss('flex', p.flex)}
   
   ${generalCss}
 `

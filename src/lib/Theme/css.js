@@ -1,14 +1,30 @@
 import { css } from 'styled-components'
 
+export const media = (cssArray) => css`
+  ${p => css`${
+    cssArray.map( (css, index) => css &&
+      `@media only screen and (min-width: ${p.theme.breakpoints[index - 1] || 0}px) {
+        ${css}
+      }`
+    )
+  }`}
+`
+
+export const responsiveCss = (key, values, constantValue) => 
+  values ?
+    values instanceof Array ? media(values.map(value => value && `${key}: ${constantValue || value}`)) : css`${key}: ${constantValue || values}`
+  : null
+
 export const fontCss = css`
   ${p => css`
     font-family: ${p.theme.fontFamily};
 
     font-size: ${p.theme.fontSizeM};
-    ${p.XS && css`font-size: ${p.theme.fontSizeXS}`}
-    ${p.S && css`font-size: ${p.theme.fontSizeS}`}
-    ${p.L && css`font-size: ${p.theme.fontSizeL}`}
-    ${p.XL && css`font-size: ${p.theme.fontSizeXL}`}
+    ${responsiveCss('font-size', p.XS, p.theme.fontSizeXS)}
+    ${responsiveCss('font-size', p.S, p.theme.fontSizeS)}
+    ${responsiveCss('font-size', p.M, p.theme.fontSizeM)}
+    ${responsiveCss('font-size', p.L, p.theme.fontSizeL)}
+    ${responsiveCss('font-size', p.XL, p.theme.fontSizeXL)}
 
     ${p => p.letterSpaceXS && css`letter-spacing: ${p => p.theme.fontSizeXS}`}  
     ${p => p.letterSpaceS && css`letter-spacing: ${p => p.theme.fontSizeS}`}
@@ -31,8 +47,8 @@ export const fontCss = css`
 
 export const generalCss = css`
   ${p => css`
-    ${p.width && `width: ${p.width};`}
-    ${p.height && `height: ${p.height};`}
+    ${p.width && responsiveCss('width', p.width)}
+    ${p.height && responsiveCss('height', p.height)}
     ${p.maxWidth && css`max-width: ${p.maxWidth};`}
     ${p.maxHeight && css`max-height: ${p.maxHeight};`} 
     ${p.fitWidth && css`min-width: fit-content;`}
