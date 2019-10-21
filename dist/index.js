@@ -1,1 +1,21 @@
-export { default as Text } from './Text';
+// export * from './Avatar'
+// export * from './Button'
+// export * from './DropToUpload'
+// export * from './Expand'
+// export * from './FixComponent'
+// export * from './Footer'
+// export * from './Graph'
+// export * from './Header'
+// export * from './Hr'
+// export * from './Icon'
+// export * from './Image'
+// export * from './Input'
+export * from './Layout'; // export * from './Loader'
+// export * from './Panel'
+// export * from './ProgressBar'
+// export * from './ScrollLoader'
+// export * from './Tab'
+// export * from './Table'
+
+export * from './Text';
+export * from './Theme'; // export * from './Uploader'

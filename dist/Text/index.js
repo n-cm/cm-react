@@ -1,4 +1,10 @@
-import React from 'react';
-export default (() => {
-  return React.createElement("div", null, "My Text component");
-});
+import styled from 'styled-components';
+import { fontCss, generalCss } from '../Theme'; // TODO: Add a tag, span tag
+
+export const Text = styled.p`
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+  ${generalCss}
+  ${fontCss}
+`;
